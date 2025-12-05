@@ -9,6 +9,9 @@
 ---
 
 ## 📊 Vue d'Ensemble
+<img width="2560" height="1440" alt="Capture d’écran 2025-12-05 à 13 20 41" src="https://github.com/user-attachments/assets/1723579d-049c-49ec-9605-285400b9b311" />
+<img width="2560" height="1440" alt="Capture d’écran 2025-12-05 à 13 20 59" src="https://github.com/user-attachments/assets/ce4a3e73-4bf2-4b5a-a0ef-3d2a072388a5" />
+<img width="2560" height="1440" alt="Capture d’écran 2025-12-05 à 13 21 11" src="https://github.com/user-attachments/assets/90c4a711-7b35-4299-9944-5947fe9375d1" />
 
 Ce projet est un **tableau de bord interactif complet** analysant le marché immobilier français sur 5 ans (2020-2024) à travers **6 216 763 transactions** pour **41 104,48 €** de prix moyen.
 
