@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "ReportSection",
+  "displayName": "TDB",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "visualInteractions": [
+    {
+      "source": "fa5c74b9aade3b5e4255",
+      "target": "b0eef470bec431426e02",
+      "type": "DataFilter"
+    },
+    {
+      "source": "fa5c74b9aade3b5e4255",
+      "target": "68fec7b7b691bc5a85d1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "fa5c74b9aade3b5e4255",
+      "target": "64e3438454940c85e08b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "fa5c74b9aade3b5e4255",
+      "target": "eab5d55ec1086506422d",
+      "type": "DataFilter"
+    }
+  ]
+}

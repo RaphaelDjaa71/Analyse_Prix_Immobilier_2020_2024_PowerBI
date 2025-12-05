@@ -1,0 +1,148 @@
+table data
+	lineageTag: 74ed5227-3d9c-43bc-8c70-9c404121f576
+
+	measure PrixMedian = MEDIAN(data[01_Prix_m2])
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 1d49dbf6-b9ec-4a06-b38d-166e84bdae93
+
+	column 'Source.Name'
+		dataType: string
+		lineageTag: 9bfdfd33-1bcb-4f7e-be42-eb1dba49ac3b
+		summarizeBy: none
+		sourceColumn: Source.Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date mutation'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5170b2c4-6cad-469d-94b5-e826af2ce0c4
+		summarizeBy: none
+		sourceColumn: Date mutation
+
+		variation Variation
+			isDefault
+			relationship: 0b4f3d29-6382-411e-a08e-fe743904ffc5
+			defaultHierarchy: LocalDateTable_eec8895f-ddd2-402e-bf4b-4a7ec91a8aae.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Nature mutation'
+		dataType: string
+		lineageTag: 3e99d34e-173f-4bc6-94f9-4671d166bace
+		summarizeBy: none
+		sourceColumn: Nature mutation
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valeur fonciere'
+		dataType: double
+		lineageTag: abdf0dae-1e99-4b30-9daf-6dba361c8aa2
+		summarizeBy: sum
+		sourceColumn: Valeur fonciere
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Type de voie'
+		dataType: string
+		lineageTag: f7d3a86a-494d-4255-9de1-f61685e006c9
+		summarizeBy: none
+		sourceColumn: Type de voie
+
+		annotation SummarizationSetBy = Automatic
+
+	column Voie
+		dataType: string
+		lineageTag: 34cbb13d-f00e-4039-87c1-6a604a7aeb1d
+		summarizeBy: none
+		sourceColumn: Voie
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Code postal'
+		dataType: int64
+		formatString: 0
+		lineageTag: a3b78c87-1103-4068-bffb-0e8c307e92f5
+		summarizeBy: sum
+		sourceColumn: Code postal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Commune
+		dataType: string
+		lineageTag: 5233f3c3-d05d-4ee4-9b70-745af2769a9b
+		summarizeBy: none
+		sourceColumn: Commune
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Code departement'
+		dataType: int64
+		formatString: 0
+		lineageTag: d984a9fe-3bd3-45e4-bee1-0c89982ae7b8
+		summarizeBy: none
+		sourceColumn: Code departement
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type local'
+		dataType: string
+		lineageTag: c649def5-0e8d-4aab-b78a-7b3ad747ce2a
+		summarizeBy: none
+		sourceColumn: Type local
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Surface reelle bati'
+		dataType: int64
+		formatString: 0
+		lineageTag: 455db7d2-728e-4fc5-9723-64b7693ba182
+		summarizeBy: sum
+		sourceColumn: Surface reelle bati
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre pieces principales'
+		dataType: int64
+		formatString: 0
+		lineageTag: ec5b74d7-d781-411f-8522-2ef883fce881
+		summarizeBy: sum
+		sourceColumn: Nombre pieces principales
+
+		annotation SummarizationSetBy = Automatic
+
+	column 01_Prix_m2 = DIVIDE(data[Valeur fonciere], data[Surface reelle bati], 0)
+		formatString: #,0.00\ "€";-#,0.00\ "€";#,0.00\ "€"
+		lineageTag: 56fbeb14-01a7-4368-ac27-4888700c412e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition data = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("C:\Users\33745\Downloads\M2\VTL-PowerBI\ProjetFinal_SilueRuth&DjaaRaphael\data"),
+				    #"Fichiers masqués filtrés1" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),
+				    #"Appeler une fonction personnalisée1" = Table.AddColumn(#"Fichiers masqués filtrés1", "Transformer le fichier", each #"Transformer le fichier"([Content])),
+				    #"Colonnes renommées1" = Table.RenameColumns(#"Appeler une fonction personnalisée1", {"Name", "Source.Name"}),
+				    #"Autres colonnes supprimées1" = Table.SelectColumns(#"Colonnes renommées1", {"Source.Name", "Transformer le fichier"}),
+				    #"Colonne de tables développée1" = Table.ExpandTableColumn(#"Autres colonnes supprimées1", "Transformer le fichier", Table.ColumnNames(#"Transformer le fichier"(#"Exemple de fichier"))),
+				    #"Type modifié" = Table.TransformColumnTypes(#"Colonne de tables développée1",{{"Source.Name", type text}, {"Identifiant de document", type any}, {"Reference document", type any}, {"1 Articles CGI", type any}, {"2 Articles CGI", type any}, {"3 Articles CGI", type any}, {"4 Articles CGI", type any}, {"5 Articles CGI", type any}, {"No disposition", Int64.Type}, {"Date mutation", type date}, {"Nature mutation", type text}, {"Valeur fonciere", type number}, {"No voie", Int64.Type}, {"B/T/Q", type text}, {"Type de voie", type text}, {"Code voie", type text}, {"Voie", type text}, {"Code postal", Int64.Type}, {"Commune", type text}, {"Code departement", Int64.Type}, {"Code commune", Int64.Type}, {"Prefixe de section", type any}, {"Section", type text}, {"No plan", Int64.Type}, {"No Volume", type any}, {"1er lot", Int64.Type}, {"Surface Carrez du 1er lot", type number}, {"2eme lot", Int64.Type}, {"Surface Carrez du 2eme lot", type number}, {"3eme lot", type any}, {"Surface Carrez du 3eme lot", type any}, {"4eme lot", type any}, {"Surface Carrez du 4eme lot", type any}, {"5eme lot", type any}, {"Surface Carrez du 5eme lot", type any}, {"Nombre de lots", Int64.Type}, {"Code type local", Int64.Type}, {"Type local", type text}, {"Identifiant local", type any}, {"Surface reelle bati", Int64.Type}, {"Nombre pieces principales", Int64.Type}, {"Nature culture", type text}, {"Nature culture speciale", type text}, {"Surface terrain", Int64.Type}}),
+				    #"Colonnes supprimées" = Table.RemoveColumns(#"Type modifié",{"Identifiant de document", "Reference document", "1 Articles CGI", "2 Articles CGI", "3 Articles CGI", "4 Articles CGI", "5 Articles CGI", "No disposition"}),
+				    #"Lignes filtrées" = Table.SelectRows(#"Colonnes supprimées", each true),
+				    #"Colonnes supprimées1" = Table.RemoveColumns(#"Lignes filtrées",{"B/T/Q", "Prefixe de section", "Section", "1er lot", "Surface Carrez du 1er lot", "2eme lot", "Surface Carrez du 2eme lot", "3eme lot", "Surface Carrez du 3eme lot", "4eme lot", "Surface Carrez du 4eme lot", "5eme lot", "Surface Carrez du 5eme lot", "Nombre de lots", "Code type local"}),
+				    #"Colonnes supprimées2" = Table.RemoveColumns(#"Colonnes supprimées1",{"Surface terrain", "No voie", "Code voie", "Code commune", "No Volume", "No plan", "Identifiant local", "Nature culture", "Nature culture speciale"}),
+				    #"Lignes filtrées1" = Table.SelectRows(#"Colonnes supprimées2", each ([Type local] <> "" and [Type local] <> "Dépendance")),
+				    #"Type modifié1" = Table.TransformColumnTypes(#"Lignes filtrées1",{{"Date mutation", type date}}),
+				    #"Lignes filtrées2" = Table.SelectRows(#"Type modifié1", each true),
+				    #"Type modifié2" = Table.TransformColumnTypes(#"Lignes filtrées2",{{"Date mutation", type date}})
+				in
+				    #"Type modifié2"
+
+	annotation PBI_ResultType = Table
+

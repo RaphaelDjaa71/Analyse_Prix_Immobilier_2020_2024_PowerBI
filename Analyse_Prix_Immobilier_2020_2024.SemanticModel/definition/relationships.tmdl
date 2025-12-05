@@ -1,0 +1,9 @@
+relationship 0b4f3d29-6382-411e-a08e-fe743904ffc5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data.'Date mutation'
+	toColumn: LocalDateTable_eec8895f-ddd2-402e-bf4b-4a7ec91a8aae.Date
+
+relationship 7d87fe3f-2b78-4d42-ae35-3d9dfd5462f1
+	fromColumn: data.'Code departement'
+	toColumn: 'Départements français'.DépartementNuméro
+

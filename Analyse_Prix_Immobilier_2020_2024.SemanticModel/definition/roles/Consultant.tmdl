@@ -1,0 +1,5 @@
+role Consultant
+	modelPermission: read
+
+	annotation PBI_Id = 6f8aedb534ab47a79f76cf84bcc3f73e
+

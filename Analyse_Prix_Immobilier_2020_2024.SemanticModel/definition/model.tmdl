@@ -1,0 +1,31 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Transformer le fichier à partir de data'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformer le fichier à partir de data\Requêtes d''assistance'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["data","Exemple de fichier","Paramètre1","Transformer l'exemple de fichier","Transformer le fichier","Départements français"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table data
+ref table DateTableTemplate_35335810-e292-4ccd-a428-1663a59633ba
+ref table LocalDateTable_eec8895f-ddd2-402e-bf4b-4a7ec91a8aae
+ref table 'Départements français'
+
+ref role Consultant
+
+ref cultureInfo fr-FR
+

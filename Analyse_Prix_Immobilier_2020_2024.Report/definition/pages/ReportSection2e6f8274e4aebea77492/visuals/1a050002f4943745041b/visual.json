@@ -1,0 +1,154 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "1a050002f4943745041b",
+  "position": {
+    "x": 141.89825360668186,
+    "y": 91.359149582384219,
+    "z": 0,
+    "height": 444.16097190584668,
+    "width": 996.20349278663639
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Ce rapport Power BI a été créé pour analyser l'évolution du marché immobilier français entre 2020 et 2024 en utilisant les données des Demandes de Valeurs Foncières (DVF) disponibles en Open Data. L'objectif principal est de comprendre les tendances du marché en termes de prix, de volumes de ventes et de types de biens, et d'identifier les zones géographiques les plus dynamiques.",
+                    "textStyle": {
+                      "fontSize": "12pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Le rapport est structuré en trois pages principales :",
+                    "textStyle": {
+                      "fontSize": "12pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Page d'accueil :",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt",
+                      "color": "var(--tw-prose-bold)"
+                    }
+                  },
+                  {
+                    "value": " Offre une vue d'ensemble du marché, avec des indicateurs clés tels que le nombre total de ventes, le prix moyen des transactions et la surface moyenne des biens vendus. Une carte interactive permet de comparer les prix au m² par département, tandis qu'un graphique d'évolution montre l'évolution du prix médian au fil du temps. Des filtres permettent d'explorer les données par année, type de bien et nature de la mutation.",
+                    "textStyle": {
+                      "fontSize": "12pt"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Page \"Type de biens\" :",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt",
+                      "color": "var(--tw-prose-bold)"
+                    }
+                  },
+                  {
+                    "value": " Permet de comparer l'évolution des prix et des volumes de ventes entre les différents types de biens immobiliers (maisons, appartements, locaux industriels). Des graphiques montrent l'évolution du prix médian au m² par type de bien, ainsi que la répartition des ventes par type de bien au fil du temps. Une carte de dispersion visualise la relation entre la surface moyenne et le prix moyen des biens par type de bien.",
+                    "textStyle": {
+                      "fontSize": "12pt"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Page \"Localisation\" :",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt",
+                      "color": "var(--tw-prose-bold)"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt"
+                    }
+                  },
+                  {
+                    "value": "Permet d'analyser les tendances du marché au niveau géographique (régions et départements). Une carte de densité montre la répartition des ventes par région, tandis que des tableaux classent les départements avec les prix médians au m² les plus élevés et les plus bas.",
+                    "textStyle": {
+                      "fontSize": "12pt"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Le rapport a été conçu pour être interactif, permettant aux utilisateurs de filtrer les données et d'explorer les visualisations en détail.",
+                    "textStyle": {
+                      "fontSize": "12pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

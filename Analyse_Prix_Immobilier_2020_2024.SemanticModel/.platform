@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Analyse_Prix_Immobilier_2020_2024"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "32bb577e-e083-4479-9e85-a9b4890fb8b5"
+  }
+}
