@@ -1,0 +1,11 @@
+# Power BI
+*.pbix.backup
+*.pbitool.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Données sensibles (si tu en as)
+*.credentials
+config_local.json
